@@ -1,5 +1,6 @@
 flash_card_data = { array: [
   { type: 'ruby',
+    name: '&',
     variables: {},
     command: "[1,5,2] & [1,2]",
     output: "[1,2]",
@@ -7,6 +8,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'sort_by',
     variables: {},
     command: "['abc','abcd].sort_by{ |word| word.length }",
     output: "['abc','abcd']",
@@ -14,6 +16,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'map',
     variables: {},
     command: "[1,2,3].map{ |element| element += 1 }",
     output: "[2,3,4]",
@@ -21,6 +24,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'compact',
     variables: {},
     command: "[nil,4,8,nil].compact",
     output: "[4,8]",
@@ -28,6 +32,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'flatten',
     variables: {},
     command: "[2,3,[5,6],[8,9,10]].flatten",
     output: "[2,3,5,6,8,9,10]",
@@ -35,6 +40,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'zip',
     variables: {},
     command: "['a','b','c'].zip([1,2,3])",
     output: "[['a',1],['b',2],['c',3]]",
@@ -42,6 +48,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'zip',
     variables: {},
     command: "[4,8,15].zip([42,43])",
     output: "[[4,42],[8,43],[15,nil]]",
@@ -49,6 +56,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'sort_by',
     variables: { a: [2,1,3,4], b: [1,2,3,4] },
     command: "a2.sort_by{ |element| a.index(element) }",
     output: "[2,1,3,4]",
@@ -56,6 +64,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'flatten',
     variables: {},
     command: "[4,[8],[16,[23,42]]].flatten(1)",
     output: "[4,8,15,16,[23,42]]",
@@ -63,6 +72,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'map',
     variables: {},
     command: "[4,7,1].map{ |element| element + 1 }",
     output: "[5,8,2]",
@@ -70,6 +80,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'shuffle',
     variables: {},
     command: "[1,2,3].shuffle",
     output: "[3,1,2]",
@@ -77,6 +88,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'select',
     variables: {},
     command: "[1,3,2,5,6].select{ |element| element > 3 }",
     output: "[5,6]",
@@ -84,6 +96,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'uniq',
     variables: {},
     command: "[2,2,1,3,3].uniq",
     output: "[2,1,3]",
@@ -91,6 +104,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'each',
     variables: {},
     command: "[[1,2],[3,4]].each{ |a,b| puts a }",
     output: "1 \n 3",
@@ -98,6 +112,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'each_slice',
     variables: {},
     command: "[1,2,3,4,5].each_slice(2){ |slice| puts slice }",
     output: "[1,2] \n [3,4] \n [5] \n nil",
@@ -105,6 +120,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'each_slice',
     variables: {},
     command: "[1,2,3,4].each_slice(2).to_a",
     output: "[[1,2],[3,4]]",
@@ -112,6 +128,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'slice',
     variables: {},
     command: "[4,8,23,42].slice(2..3)",
     output: "[23,42]",
@@ -119,6 +136,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'slice',
     variables: {},
     command: "[4,8,23,42].slice(2)",
     output: "23",
@@ -126,13 +144,15 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'each_with_index',
     variables: { arr: ['a','b','c']},
-    command: "arr.each_with_index{ |char, index| puts '#{index}. #{char}' }",
+    command: "arr.each_with_index{ |char, index| puts '\#{index}. \#{char}' }",
     output: "1. a\n2. b\n3. c",
     comment: "No change in original array.",
     change_original: false
   },
   { type: 'ruby',
+    name: 'each',
     variables: { arr: [1,2,3] },
     command: "arr[0..1].each{ |element| puts element }",
     output: "1\n2",
@@ -140,6 +160,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'values_at',
     variables: {},
     command: "[4,3,1,2].values_at 0,1",
     output: "[4,3]",
@@ -147,6 +168,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'fetch',
     variables: {},
     command: "[1,2,3].fetch(100,'oops')",
     output: "oops",
@@ -154,6 +176,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'take',
     variables: {},
     command: "[1,2,3].take(2)",
     output: "[1,2]",
@@ -161,6 +184,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'drop',
     variables: {},
     command: "[4,5,6,7].drop(3)",
     output: "[7]",
@@ -168,6 +192,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'drop_while',
     variables: {},
     command: "[1,2,3,0].drop_while{ |element| element < 3 }",
     output: "[3,0]",
@@ -175,6 +200,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: '[]',
     variables: {arr: [1,2,3,4]},
     command: "a[0..2]",
     output: "[1,2,3]",
@@ -182,6 +208,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: '[]==[]',
     variables: {},
     command: "['a','c',7] == ['a','c',7]",
     output: "true",
@@ -189,6 +216,7 @@ flash_card_data = { array: [
     change_original: nil
   },
   { type: 'ruby',
+    name: '[]==[]',
     variables: {},
     command: "['a','c'] == ['a','c',7]",
     output: "false",
@@ -196,6 +224,7 @@ flash_card_data = { array: [
     change_original: nil
   },
   { type: 'ruby',
+    name: '[]<=>[]',
     variables: {},
     command: "[1,2,3] <=> [1,2,3]",
     output: "0",
@@ -203,6 +232,7 @@ flash_card_data = { array: [
     change_original: nil
   },
   { type: 'ruby',
+    name: '[]<=>[]',
     variables: {},
     command: "[1,2] <=> [1,:two]",
     output: "nil",
@@ -210,6 +240,7 @@ flash_card_data = { array: [
     change_original: nil
   },
   { type: 'ruby',
+    name: '[]<=>[]',
     variables: {},
     command: "[1,2,3,4] <=> [1,2]",
     output: "1",
@@ -217,6 +248,7 @@ flash_card_data = { array: [
     change_original: nil
   },
   { type: 'ruby',
+    name: '[]<=>[]',
     variables: {},
     command: "['a','a','c'] <=> ['a','b','c']",
     output: "-1",
@@ -224,6 +256,119 @@ flash_card_data = { array: [
     change_original: nil
   },
   { type: 'ruby',
+    name: 'Array',
+    variables: {},
+    command: "Array({ :a => 'a', :b => 'b' })",
+    output: "[[:a,'a'],[:b,'b']]",
+    comment: "",
+    change_original: nil
+  },
+  { type: 'ruby',
+    name: 'Array',
+    variables: {},
+    command: "Array.new(4){ Hash.new }",
+    output: "[{}, {}, {}, {}]",
+    comment: "",
+    change_original: nil
+  },
+  { type: 'ruby',
+    name: 'Array',
+    variables: {},
+    command: "Array.new(3)",
+    output: "[nil, nil, nil]",
+    comment: "",
+    change_original: nil
+  },
+  { type: 'ruby',
+    name: 'pop',
+    variables: {},
+    command: "[1,2,3,4].pop(2)",
+    output: "[3,4]",
+    comment: "Changes original array",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'Array',
+    variables: {},
+    command: "Array.new(3, true)",
+    output: "[true, true, true]",
+    comment: "",
+    change_original: nil
+  },
+  { type: 'ruby',
+    name: 'repeated_permutation',
+    variables: {},
+    command: "[1,2,3].repeated_permutation(3).to_a",
+    output: "[[1, 1, 1], [1, 1, 2], [1, 1, 3], [1, 2, 1], [1, 2, 2], [1, 2, 3], [1, 3, 1], [1, 3, 2], [1, 3, 3], [2, 1, 1], [2, 1, 2], [2, 1, 3], [2, 2, 1], [2, 2, 2], [2, 2, 3], [2, 3, 1], [2, 3, 2], [2, 3, 3], [3, 1, 1], [3, 1, 2], [3, 1, 3], [3, 2, 1], [3, 2, 2], [3, 2, 3], [3, 3, 1], [3, 3, 2], [3, 3, 3]]",
+    comment: "#<Enumerator: [1, 2, 3]:repeated_permutation(3)> without .to_a",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'index',
+    variables: {},
+    command: "[4,9,8].index(8)",
+    output: "2",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'class',
+    variables: {},
+    command: "[1,2,3].class",
+    output: "Array",
+    comment: "",
+    change_original: nil
+  },
+  { type: 'ruby',
+    name: 'join',
+    variables: {},
+    command: "[2,4,6].join(" ")",
+    output: "2 4 6",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'count',
+    variables: {},
+    command: "[2,3,4,5,6].count{ |element| element.even? }",
+    output: "3",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'product',
+    variables: { arr: [1,2,3] },
+    command: "[1,2,3].product(arr).reject{ |prod| c.first == c.last }",
+    output: "[[1,2], [1,3], [2,1], [2,3], [3,1], [3,2]]",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: '*',
+    variables: {},
+    command: "first, *middle, last = [42,43,44,45,46]",
+    output: "first = 42\nmiddle = [43,44,45]\nlast = 46",
+    comment: "",
+    change_original: nil
+  },
+  { type: 'ruby',
+    name: 'reduce',
+    variables: {},
+    command: "[1,2,3].reduce(0,:+)",
+    output: "6",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'count',
+    variables: {},
+    command: "['Spock', 'Kirk', 'Spock'].count('Spock')",
+    output: "2",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
@@ -231,6 +376,175 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: 'count',
+    variables: {},
+    command: "[42,8,42].count(42)",
+    output: "2",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'permutation',
+    variables: {},
+    command: "[1,2,3].permutation.to_a",
+    output: "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+    comment: "#<Enumerator: [1, 2, 3]:permutation> without .to_a",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'permutation',
+    variables: {},
+    command: "[1,2,3,4].permutation(3).to_a",
+    output: "[[1, 2, 3], [1, 2, 4], [1, 3, 2], [1, 3, 4], [1, 4, 2], [1, 4, 3], [2, 1, 3], [2, 1, 4], [2, 3, 1], [2, 3, 4], [2, 4, 1], [2, 4, 3], [3, 1, 2], [3, 1, 4], [3, 2, 1], [3, 2, 4], [3, 4, 1], [3, 4, 2], [4, 1, 2], [4, 1, 3], [4, 2, 1], [4, 2, 3], [4, 3, 1], [4, 3, 2]]",
+    comment: "#<Enumerator: [1, 2, 3, 4]:permutation(3)> without .to_a",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'product',
+    variables: { arr: ['1', '2', '3'] },
+    command: "['a','b','c'].product(arr)",
+    output: "[['a', '1'], ['a', '2'], ['a', '3'], ['b', '1'], ['b', '2'], ['b', '3'], ['c', '1'], ['c', '2'], ['c', '3]]",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'permutation',
+    variables: {},
+    command: "[1,2,3].permutation(2).to_a",
+    output: "[[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]",
+    comment: "#<Enumerator: [1, 2, 3]:permutation(2)> without .to_a",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: '<<',
+    variables: {},
+    command: "[1,2] << 'c' << 'd'",
+    output: "[1,2,'c','d']",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'shift',
+    variables: {},
+    command: "[2,3,1].shift",
+    output: "2",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: '<<',
+    variables: {},
+    command: "[2,2,3] << 5",
+    output: "[2,2,3,5]",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'delete_if',
+    variables: {},
+    command: "[2,2,3,5,4].delete_if{ |element| element == 2 }",
+    output: "[3,5,4]",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'join',
+    variables: {},
+    command: "[2,4,6]",
+    output: "246",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'last',
+    variables: {},
+    command: "[2,3,5,1].last",
+    output: "1",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'any?',
+    variables: {},
+    command: "([1,5,2] & [1,2]).any?",
+    output: "true",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'shift',
+    variables: {},
+    command: "[4,8,15,42].shift(2)",
+    output: "[4,8]",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'push',
+    variables: {},
+    command: "[2,3,5].push('a')",
+    output: "[2,3,5,'a']",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'pop',
+    variables: {},
+    command: "[1,2,3].pop",
+    output: "3",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'count',
+    variables: {},
+    command: "[2,5,6].count",
+    output: "3",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'push',
+    variables: {},
+    command: "[2,3,5].push(7)",
+    output: "[2,3,5,7]",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'unshift',
+    variables: {},
+    command: "[1,2,3].unshift(5)",
+    output: "[5,1,2,3]",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'all?',
+    variables: {},
+    command: "[2,2,1,3,3].all?{ |element| element > 1 }",
+    output: "false",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: 'keep_if',
+    variables: {},
+    command: "[1,2,3,0].keep_if{ |element| element < 3 }",
+    output: "[1,2,0]",
+    comment: "Changes original array.",
+    change_original: true
+  },
+  { type: 'ruby',
+    name: 'first',
+    variables: {},
+    command: "[2,3,5,1].first",
+    output: "2",
+    comment: "",
+    change_original: false
+  },
+  { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
@@ -238,6 +552,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
@@ -245,6 +560,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
@@ -252,6 +568,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
@@ -259,6 +576,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
@@ -266,6 +584,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
@@ -273,6 +592,7 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
@@ -280,24 +600,21 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
-    variables: {},
-    command: "",
-    output: "",
-    comment: "",
-    change_original: false
-  },
-  { type: 'ruby',
+    name: '',
     variables: {},
     command: "",
     output: "",
     comment: "",
     change_original: false
   }
-
-
 ]
 }
 
-flash_card_data[:array].each do |command|
-  puts command[:command]
+flash_card_data.each do |type, values|
+  values.each_with_index do |command, index|
+    puts "\n------------ COMMAND: #{type.to_s} ##{index + 1}------------"
+    puts "Variables: #{command[:variables]}" unless command[:variables].empty?
+    puts command[:command]
+    puts "  => #{command[:output]}"
+  end
 end
