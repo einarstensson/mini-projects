@@ -1,0 +1,7 @@
+#dictionary_captains.yml
+---
+captains:
+    Spock: Science Officer
+    results: Test
+    Kirk: Captain
+...
