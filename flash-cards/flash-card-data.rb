@@ -1188,11 +1188,10 @@ flash_card_data = {
   }],
 
 # -------------------- REG EXP -------------------- 
-  :reg_exp [
-  { type: "ruby",
-    name: "\D",
+  reg_exp: [{ type: "ruby",
+    name: "\\D",
     variables: {},
-    command: "/\D/",
+    command: "/\\D/",
     output: "Non-digit, e.g. a A w # % _ +.",
     comment: "",
     change_original: nil
@@ -1206,41 +1205,41 @@ flash_card_data = {
     change_original: nil
   },
   { type: "ruby",
-    name: "\w",
+    name: "\\w",
     variables: {},
-    command: "/\w/",
+    command: "/\\w/",
     output: "Alphanumeric and underscore, e.g. a _ B h 3 1",
     comment: "",
     change_original: nil
   },
   { type: "ruby",
-    name: "\W",
+    name: "\\W",
     variables: {},
-    command: "/\W/",
+    command: "/\\W/",
     output: "All non-alphanumeric, e.g. - ( * ? ]",
     comment: "",
     change_original: nil
   },
   { type: "ruby",
-    name: "\d",
+    name: "\\d",
     variables: {},
-    command: "/\d/",
+    command: "/\\d/",
     output: "Digits",
     comment: "",
     change_original: nil
   },
   { type: "ruby",
-    name: "\Z",
+    name: "\\Z",
     variables: {},
-    command: "/..\Z/",
+    command: "/..\\Z/",
     output: "End anchor for multiline.",
     comment: "",
     change_original: nil
   },
   { type: "ruby",
-    name: "\S",
+    name: "\\S",
     variables: {},
-    command: "\S",
+    command: "\\S",
     output: "Non-whitespace (any visible character).",
     comment: "",
     change_original: nil
@@ -1257,22 +1256,23 @@ flash_card_data = {
     name: "$",
     variables: {},
     command: ".$",
-    output: "Anchor for the end of a non-multiline line. See also \Z.",
+    output: "Anchor for the end of a non-multiline line. See also \\Z.",
     comment: "",
     change_original: nil
   },
   { type: "ruby",
-    name: "\s",
+    name: "\\s",
     variables: {},
-    command: "\s",
+    command: "\\s",
     output: "All spaces, tabs, and new lines.",
     comment: "",
     change_original: nil
   },
+
   { type: "ruby",
-    name: "\A",
+    name: "\\A",
     variables: {},
-    command: "\A.",
+    command: "\\A.",
     output: "Anchor for the start of a multiline string. See also ^.",
     comment: "",
     change_original: nil
@@ -1281,11 +1281,10 @@ flash_card_data = {
     name: "^",
     variables: {},
     command: "^.",
-    output: "Anchor for the start of a single line string. Not same as e.g. [^z]! See also \A",
+    output: "Anchor for the start of a single line string. Not same as e.g. [^z]! See also \\A.",
     comment: "",
     change_original: nil
-  }
-  ]
+  }]
 }
 
 flash_card_data.each do |type, values|
