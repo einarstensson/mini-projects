@@ -1,4 +1,7 @@
-flash_card_data = { array: [
+flash_card_data = { 
+
+# -------------------- ARRAY --------------------
+  array: [
   { type: 'ruby',
     name: '&',
     variables: {},
@@ -368,14 +371,6 @@ flash_card_data = { array: [
     change_original: false
   },
   { type: 'ruby',
-    name: '',
-    variables: {},
-    command: "",
-    output: "",
-    comment: "",
-    change_original: false
-  },
-  { type: 'ruby',
     name: 'count',
     variables: {},
     command: "[42,8,42].count(42)",
@@ -544,6 +539,7 @@ flash_card_data = { array: [
     change_original: false
   }],
 
+# -------------------- STRING -------------------- 
   string: [
   { type: "ruby",
     name: "scan",
@@ -873,6 +869,8 @@ flash_card_data = { array: [
     comment: "",
     change_original: false
   }],
+
+# -------------------- HASH -------------------- 
   hash: [
   { type: "ruby",
     name: "has_value?",
@@ -1084,44 +1082,208 @@ flash_card_data = { array: [
   },
   { type: "ruby",
     name: "Hash",
-    variables: { arr: [[4,8],[15,16] },
+    variables: { arr: [[4, 8], [15, 16]] },
     command: "Hash[*arr.flatten]",
     output: "{ '4' => 8, '15' => 16 }",
     comment: "",
     change_original: nil
   }],
 
+# -------------------- FIXNUM -------------------- 
   fixnum: [{ type: "ruby",
-    name: "",
+    name: "between?",
     variables: {},
-    command: "",
+    command: "5.between?(1, 10)",
+    output: "true",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "odd?",
+    variables: {},
+    command: "5.odd?",
+    output: "true",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "even?",
+    variables: {},
+    command: "6.even?",
+    output: "true",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "?",
+    variables: {},
+    command: "1 > 0 ? true : false",
     output: "",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "class",
+    variables: {},
+    command: "42.class",
+    output: "Fixnum",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "<=>",
+    variables: {},
+    command: "1 <=> 3",
+    output: "-1",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: ",",
+    variables: {},
+    command: "a, b = 1, 2",
+    output: "a = 1\nb = 2",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "divmod",
+    variables: {},
+    command: "100.divmod(11)",
+    output: "[9, 1]",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "&&",
+    variables: {},
+    command: "1 > 0 && 2 > 0",
+    output: "true",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "abs",
+    variables: {},
+    command: "-3.abs",
+    output: "3",
     comment: "",
     change_original: false
   },
   { type: "ruby",
-    name: "",
+    name: "chr",
     variables: {},
-    command: "",
-    output: "",
+    command: "97.chr",
+    output: "a",
     comment: "",
     change_original: false
   },
   { type: "ruby",
-    name: "",
+    name: "next",
     variables: {},
-    command: "",
-    output: "",
+    command: "41.next",
+    output: "42",
     comment: "",
-    change_original: false
+    change_original: nil
+  }],
+
+# -------------------- REG EXP -------------------- 
+  :reg_exp [
+  { type: "ruby",
+    name: "\D",
+    variables: {},
+    command: "/\D/",
+    output: "Non-digit, e.g. a A w # % _ +.",
+    comment: "",
+    change_original: nil
   },
   { type: "ruby",
-    name: "",
+    name: ".",
     variables: {},
-    command: "",
-    output: "",
+    command: "/./",
+    output: "All characters.",
     comment: "",
-    change_original: false
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "\w",
+    variables: {},
+    command: "/\w/",
+    output: "Alphanumeric and underscore, e.g. a _ B h 3 1",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "\W",
+    variables: {},
+    command: "/\W/",
+    output: "All non-alphanumeric, e.g. - ( * ? ]",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "\d",
+    variables: {},
+    command: "/\d/",
+    output: "Digits",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "\Z",
+    variables: {},
+    command: "/..\Z/",
+    output: "End anchor for multiline.",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "\S",
+    variables: {},
+    command: "\S",
+    output: "Non-whitespace (any visible character).",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "^",
+    variables: {},
+    command: "/[^z]/",
+    output: "'Not', e.g. ^z selects all characters except z.",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "$",
+    variables: {},
+    command: ".$",
+    output: "Anchor for the end of a non-multiline line. See also \Z.",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "\s",
+    variables: {},
+    command: "\s",
+    output: "All spaces, tabs, and new lines.",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "\A",
+    variables: {},
+    command: "\A.",
+    output: "Anchor for the start of a multiline string. See also ^.",
+    comment: "",
+    change_original: nil
+  },
+  { type: "ruby",
+    name: "^",
+    variables: {},
+    command: "^.",
+    output: "Anchor for the start of a single line string. Not same as e.g. [^z]! See also \A",
+    comment: "",
+    change_original: nil
   }
   ]
 }
@@ -1131,6 +1293,6 @@ flash_card_data.each do |type, values|
     puts "\n------------ COMMAND: #{type.to_s} ##{index + 1}------------"
     puts "Variables: #{command[:variables]}" unless command[:variables].empty?
     puts command[:command]
-    puts "  => #{command[:output]}"
+    puts "===>\n #{command[:output]}"
   end
 end
