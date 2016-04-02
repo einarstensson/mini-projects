@@ -536,7 +536,7 @@
     "comment": "",
     "change_original": false
   }],
-  "string": [
+"string": [
   { "type": "ruby",
     "name": "scan",
     "variables": {},
