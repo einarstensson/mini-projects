@@ -1110,7 +1110,7 @@
     "name": "?",
     "variables": {},
     "command": "1 > 0 ? true : false",
-    "output": "",
+    "output": "true",
     "comment": "",
     "change_original": null
   },
